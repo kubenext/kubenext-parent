@@ -3,18 +3,21 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>../kubenext-uaa</module>
+    </modules>
 
     <parent>
         <groupId>com.github.kubenext</groupId>
         <artifactId>kubenext-dependencies</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.2-SNAPSHOT</version>
+        <relativePath>../kubenext-dependencies/pom.xml</relativePath>
     </parent>
 
-    <groupId>com.kubenext</groupId>
     <artifactId>kubenext-parent</artifactId>
     <packaging>pom</packaging>
 
-    <name>Kubenext parent</name>
+    <name>Kubenext Parent</name>
     <description>Kubenext Parent</description>
     <url>https://github.com/kubenext/kubenext-parent</url>
 
@@ -426,6 +429,14 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <configuration>
                         <runOrder>alphabetical</runOrder>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
                     </configuration>
                 </plugin>
             </plugins>
